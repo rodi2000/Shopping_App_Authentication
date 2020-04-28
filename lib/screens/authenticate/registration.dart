@@ -118,7 +118,7 @@ class _RegistrationState extends State<Registration> {
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 16.0),
                     child: Material(
-                      color: Colors.blueAccent,
+                      color: Colors.cyan,
                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
                       elevation: 5.0,
                       child: MaterialButton(

@@ -31,9 +31,10 @@ class _TabviewState extends State<Tabview> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.blue,
-          centerTitle: true,
-          title: Text('Printshoppy'),
+          backgroundColor: Colors.cyan,
+//          centerTitle: true,
+          title: Image.asset('images/printshoppy_logo.png'),
+          titleSpacing: 0.0,
           bottom: TabBar(
             controller: controller,
             tabs: <Tab>[

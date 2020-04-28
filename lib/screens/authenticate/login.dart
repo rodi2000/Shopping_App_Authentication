@@ -66,7 +66,7 @@ class _LoginState extends State<Login> {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 16.0),
                 child: Material(
-                  color: Colors.lightBlueAccent,
+                  color: Colors.cyan,
                   borderRadius: BorderRadius.all(Radius.circular(30.0)),
                   elevation: 5.0,
                   child: MaterialButton(
