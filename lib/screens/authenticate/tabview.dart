@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-//import 'package:printshoppy/screens/constants.dart';
-//import 'package:email_validator/email_validator.dart';
-import 'package:printshoppy/services/auth.dart';
 import 'package:printshoppy/screens/authenticate/login.dart';
 import 'package:printshoppy/screens/authenticate/registration.dart';
 
@@ -12,9 +9,6 @@ class Tabview extends StatefulWidget {
 }
 
 class _TabviewState extends State<Tabview> with SingleTickerProviderStateMixin {
-
-  final GlobalKey<FormState> _key = GlobalKey<FormState>();
-  final AuthService _auth = AuthService();
 
   String email;
   String password;

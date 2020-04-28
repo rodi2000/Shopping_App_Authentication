@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:printshoppy/screens/constants.dart';
 import 'package:email_validator/email_validator.dart';
-import 'package:printshoppy/screens/home/home.dart';
 import 'package:printshoppy/services/auth.dart';
-import 'package:printshoppy/screens/authenticate/registration.dart' as registration;
 
 class Login extends StatefulWidget {
 
-  static const String id = 'login';
+//  static const String id = 'login';
 
   @override
   _LoginState createState() => _LoginState();

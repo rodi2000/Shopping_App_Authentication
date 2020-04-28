@@ -7,7 +7,7 @@ import 'package:printshoppy/services/auth.dart';
 
 class Registration extends StatefulWidget {
 
-  static const String id = 'registration';
+//  static const String id = 'registration';
 
   @override
   _RegistrationState createState() => _RegistrationState();
@@ -128,6 +128,7 @@ class _RegistrationState extends State<Registration> {
                           if(_key.currentState.validate()){
                             _key.currentState.save();
                             dynamic result = await _auth.registerWithEmailAndPassword(email, password);
+                            print(result.uid);
 //                            Navigator.pop(context);
                           }
                           print(fname);

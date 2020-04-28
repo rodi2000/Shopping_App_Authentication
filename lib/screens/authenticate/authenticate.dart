@@ -1,10 +1,11 @@
+/*
 import 'package:flutter/material.dart';
 import 'package:printshoppy/screens/authenticate/login.dart';
 import 'package:printshoppy/screens/authenticate/registration.dart';
 
 class Authenticate extends StatefulWidget {
 
-  static const String id = 'authenticate';
+//  static const String id = 'authenticate';
 
   @override
   _AuthenticateState createState() => _AuthenticateState();
@@ -41,7 +42,7 @@ class _AuthenticateState extends State<Authenticate> {
                   borderRadius: BorderRadius.circular(30.0),
                   child: MaterialButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, Login.id);
+//                      Navigator.pushNamed(context, Login.id);
 //                      Navigator.push(context, MaterialPageRoute(
 //                          builder: (context) => Login()
 //                      ));
@@ -63,7 +64,7 @@ class _AuthenticateState extends State<Authenticate> {
                   elevation: 5.0,
                   child: MaterialButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, Registration.id);
+//                      Navigator.pushNamed(context, Registration.id);
 //                      Navigator.push(context, MaterialPageRoute(
 //                          builder: (context) => Registration()
 //                      ));
@@ -83,4 +84,4 @@ class _AuthenticateState extends State<Authenticate> {
 
     );
   }
-}
+}*/
