@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "606882767134",
+    "firebase_url": "https://printshoppy-bcb94.firebaseio.com",
+    "project_id": "printshoppy-bcb94",
+    "storage_bucket": "printshoppy-bcb94.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606882767134:android:f6c9f672417667afe1690f",
+        "android_client_info": {
+          "package_name": "com.printshoppy.printshoppy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "606882767134-8m4dl15nppf26gamfeegjlbk2mmdadgr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrr6N6M8jz8Ie-Nrchn448wmc1QNihDNA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "606882767134-8m4dl15nppf26gamfeegjlbk2mmdadgr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
