@@ -128,7 +128,7 @@ class _RegistrationState extends State<Registration> {
                           if(_key.currentState.validate()){
                             _key.currentState.save();
                             dynamic result = await _auth.registerWithEmailAndPassword(email, password);
-                            Navigator.pop(context);
+//                            Navigator.pop(context);
                           }
                           print(fname);
                           print(lname);
