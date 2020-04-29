@@ -65,7 +65,7 @@ class _LoginState extends State<Login> {
                     obscureText: true,
                     keyboardType: TextInputType.visiblePassword,
                     validator: (value) => (value.length < 6) ? "Please Enter a Valid Password" : null,
-                    onSaved: (value) => password = value,
+//                    onSaved: (value) => password = value,
                   ),
                     SizedBox(
                       height:8.0,
