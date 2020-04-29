@@ -41,7 +41,7 @@ class _TabviewState extends State<Tabview> with SingleTickerProviderStateMixin {
             controller: controller,
             tabs: <Tab>[
               Tab(text: 'Log in',),
-              Tab(text: 'Registraion',)
+              Tab(text: 'Register',)
             ],
           ),
         ),
