@@ -75,10 +75,16 @@ class _LoginState extends State<Login> {
                       children: <Widget>[
                         FlatButton(
                           onPressed: () {
-                            FirebaseAuth.instance.sendPasswordResetEmail(email: email);
-                            setState(() {
-                              error = 'The Password Reset Link Has Been Sent To $email';
-                            });
+                            if(email == null){
+                              setState(() {
+                                error = 'Please Enter Email First';
+                              });
+                            }else{
+                              FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+                              setState(() {
+                                error = 'The Password Reset Link Has Been Sent To $email';
+                              });
+                            }
                           },
                           textColor: Colors.blue,
                           child: Text('Forgot Password?'),
