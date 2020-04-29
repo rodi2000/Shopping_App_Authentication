@@ -29,7 +29,7 @@ class _LoginState extends State<Login> {
           children: <Widget>[
             showAlert(),
             SizedBox(
-              height: 65.0,
+              height: 40.0,
             ),
             Form(
               key: _key,
@@ -74,12 +74,7 @@ class _LoginState extends State<Login> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
                         FlatButton(
-                          onPressed: () async {
-                            if(_key.currentState.validate()){
-                              await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
-
-                            }
-                          },
+                          onPressed: () {},
                           textColor: Colors.blue,
                           child: Text('Forgot Password?'),
                         ),
