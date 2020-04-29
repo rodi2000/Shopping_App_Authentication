@@ -130,15 +130,15 @@ class _RegistrationState extends State<Registration> {
                           if(_key.currentState.validate()){
                             setState(() => loading = true);
                             _key.currentState.save();
-                            dynamic result = await _auth.registerWithEmailAndPassword(email, password);
+                            dynamic result = await _auth.registerWithEmailAndPassword(fname, lname, number, email, password);
                             print(result.uid);
 //                            Navigator.pop(context);
                           }
-                          print(fname);
-                          print(lname);
-                          print(number);
-                          print(email);
-                          print(password);
+//                          print(fname);
+//                          print(lname);
+//                          print(number);
+//                          print(email);
+//                          print(password);
                         },
                         minWidth: 200.0,
                         height: 42.0,

@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:printshoppy/models/user.dart';
+import 'package:printshoppy/services/database.dart';
 
 class AuthService{
 
@@ -30,10 +31,14 @@ class AuthService{
 
 
   // Registration With Email & Password
-  Future registerWithEmailAndPassword(String email, String password) async {
+  Future registerWithEmailAndPassword(String fname, String lname, var number, String email, String password) async {
     try {
       AuthResult result = await _auth.createUserWithEmailAndPassword(email: email, password: password);
       FirebaseUser user = result.user;
+
+      // Create a New Document For The User With The uid
+      await DatabaseService(uid: user.uid).updateUserData(fname, lname, number);
+
       return _userFromFirebaseUser(user);
     }catch(e){
       print(e.toString());
@@ -51,5 +56,5 @@ class AuthService{
       return null;
     }
   }
-  
+
 }
