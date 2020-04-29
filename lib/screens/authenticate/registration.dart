@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:printshoppy/models/user.dart';
 import 'package:printshoppy/screens/shared/constants.dart';
+import 'package:printshoppy/screens/shared/loading.dart';
 import 'package:printshoppy/services/auth.dart';
 
 class Registration extends StatefulWidget {
@@ -20,6 +21,7 @@ class _RegistrationState extends State<Registration> {
   final AuthService _auth = AuthService();
   User data = User();
 
+  bool loading = false;
   String fname;
   String lname;
   String email;
@@ -29,7 +31,7 @@ class _RegistrationState extends State<Registration> {
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
+    return loading ? Loading() : Scaffold(
       backgroundColor: Colors.white,
       body: Center(
         child: Form(
@@ -126,6 +128,7 @@ class _RegistrationState extends State<Registration> {
 
                           //Implement registration functionality.
                           if(_key.currentState.validate()){
+                            setState(() => loading = true);
                             _key.currentState.save();
                             dynamic result = await _auth.registerWithEmailAndPassword(email, password);
                             print(result.uid);

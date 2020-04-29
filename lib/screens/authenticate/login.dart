@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:printshoppy/screens/shared/constants.dart';
 import 'package:email_validator/email_validator.dart';
+import 'package:printshoppy/screens/shared/loading.dart';
 import 'package:printshoppy/services/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -17,13 +18,14 @@ class _LoginState extends State<Login> {
   final GlobalKey<FormState> _key = GlobalKey<FormState>();
   final AuthService _auth = AuthService();
 
+  bool loading = false;
   String email;
   String password;
   dynamic error;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return loading ? Loading() : Scaffold(
       body: Center(
         child: Column(
           children: <Widget>[
@@ -103,10 +105,12 @@ class _LoginState extends State<Login> {
                       child: MaterialButton(
                         onPressed: () async {
                         if(_key.currentState.validate()){
+                          setState(() => loading = true);
 //                            _key.currentState.save();
                               dynamic result = await _auth.loginWithEmailAndPassword(email, password);
                               if(result.toString() != "Instance of 'User'") {
                                 setState(() {
+                                  loading = false;
                                   error = result.message;
                                 });
                               }
