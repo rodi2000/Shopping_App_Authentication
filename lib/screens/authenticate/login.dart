@@ -44,14 +44,14 @@ class _LoginState extends State<Login> {
                     height: 10.0,
                   ),
                   TextFormField(
-//                onChanged: (value){
-//                  setState(() => email = value);
-//                  email = value;
-//                },
+                    onChanged: (value){
+                      setState(() => email = value);
+                      email = value;
+                  },
                     decoration: kTextFieldFormDecoration.copyWith( hintText: 'E-mail *', labelText: 'E-mail'),
                     keyboardType: TextInputType.emailAddress,
                     validator: (value) => (!EmailValidator.validate(value)) ? "Please Enter a Valid E-Mail" : null,
-                    onSaved: (value) => email = value,
+//                    onSaved: (value) => email = value,
                   ),
 
                   SizedBox(
@@ -74,7 +74,12 @@ class _LoginState extends State<Login> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
                         FlatButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+                            setState(() {
+                              error = 'The Password Reset Link Has Been Sent To $email';
+                            });
+                          },
                           textColor: Colors.blue,
                           child: Text('Forgot Password?'),
                         ),
@@ -92,7 +97,7 @@ class _LoginState extends State<Login> {
                       child: MaterialButton(
                         onPressed: () async {
                         if(_key.currentState.validate()){
-                            _key.currentState.save();
+//                            _key.currentState.save();
                               dynamic result = await _auth.loginWithEmailAndPassword(email, password);
                               if(result.toString() != "Instance of 'User'") {
                                 setState(() {
