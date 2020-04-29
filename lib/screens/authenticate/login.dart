@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:printshoppy/screens/constants.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:printshoppy/services/auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Login extends StatefulWidget {
 
@@ -18,6 +19,7 @@ class _LoginState extends State<Login> {
 
   String email;
   String password;
+  dynamic error;
 
   @override
   Widget build(BuildContext context) {
@@ -59,10 +61,27 @@ class _LoginState extends State<Login> {
                 validator: (value) => (value.length < 6) ? "Please Enter a Valid Password" : null,
                 onSaved: (value) => password = value,
               ),
+                SizedBox(
+                  height:8.0,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    FlatButton(
+                      onPressed: () async {
+                        if(_key.currentState.validate()){
+                          await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
 
-              SizedBox(
-                height: 24.0,
-              ),
+                        }
+                      },
+                      textColor: Colors.blue,
+                      child: Text('Forgot Password?'),
+                    ),
+                  ],
+                ),
+//              SizedBox(
+//                height: 20.0,
+//              ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 16.0),
                 child: Material(
@@ -71,13 +90,15 @@ class _LoginState extends State<Login> {
                   elevation: 5.0,
                   child: MaterialButton(
                     onPressed: () async {
-                      //Implement registration functionality.
                     if(_key.currentState.validate()){
                         _key.currentState.save();
-                        dynamic result = await _auth.loginWithEmailAndPassword(email, password);
-                        if(result == null){
-                          print('Error Signing in');
-                        }
+                          dynamic result = await _auth.loginWithEmailAndPassword(email, password);
+                          if(result.toString() == "Instance of 'User'"){}
+                          else{
+                            error = result.message;
+
+                          }
+//                          print(result.toString());
 //                        Navigator.pop(context);
                       }
                       print(email);
@@ -98,5 +119,17 @@ class _LoginState extends State<Login> {
         ),
       ),
     );
+  }
+
+  Widget showAlert() {
+    if(error != null){
+      return Container(
+        color: Colors.amberAccent,
+        width: double.infinity,
+        padding: EdgeInsets.all(8.0),
+        child: Row(),
+      );
+    }
+    return SizedBox(height: 0,);
   }
 }

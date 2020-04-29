@@ -36,6 +36,8 @@ class _TabviewState extends State<Tabview> with SingleTickerProviderStateMixin {
           title: Image.asset('images/printshoppy_logo.png'),
           titleSpacing: 0.0,
           bottom: TabBar(
+            indicatorColor: Colors.white,
+            indicatorWeight: 5.0,
             controller: controller,
             tabs: <Tab>[
               Tab(text: 'Log in',),
@@ -44,6 +46,7 @@ class _TabviewState extends State<Tabview> with SingleTickerProviderStateMixin {
           ),
         ),
         body: TabBarView(
+
           controller: controller,
           children: <Widget>[
             Login(),
