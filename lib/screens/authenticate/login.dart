@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:printshoppy/screens/constants.dart';
+import 'package:printshoppy/screens/shared/constants.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:printshoppy/services/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';

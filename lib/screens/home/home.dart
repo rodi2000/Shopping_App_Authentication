@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:printshoppy/screens/wrapper.dart';
+import 'package:printshoppy/screens/authenticate/wrapper.dart';
 import 'package:printshoppy/services/auth.dart';
 
 class Home extends StatelessWidget {
