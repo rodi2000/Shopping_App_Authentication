@@ -26,8 +26,8 @@ class Home extends StatelessWidget {
       body: Container(
         child: Center(
           child: Text('This Part of App is Under Construction', textDirection: TextDirection.ltr, style: TextStyle(fontSize: 20.0)),
-        ),
-      ),
+        )
+      )
     );
   }
 }

@@ -17,4 +17,9 @@ class DatabaseService {
     });
   }
 
+  // Get Stream To Listening The Changes in The Database
+  Stream<QuerySnapshot> get userinfo {
+    return info.snapshots();
+  }
+
 }
