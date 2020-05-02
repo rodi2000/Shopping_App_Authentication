@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
+import 'package:printshoppy/screens/home/detailpage.dart';
 import 'dart:convert';
 import 'package:printshoppy/screens/shared/loading.dart';
 import 'package:printshoppy/screens/authenticate/wrapper.dart';
@@ -59,6 +60,9 @@ class _HomeState extends State<Home> {
                 itemBuilder: (BuildContext context, int index) {
                   return Card(
                     elevation: 7.0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
                     child: ListTile(
                       leading: CircleAvatar(
                         child: Text(snapshot.data[index].name[0]),
@@ -68,6 +72,10 @@ class _HomeState extends State<Home> {
                       title: Text(snapshot.data[index].name),
                       subtitle: Text(snapshot.data[index].operatingSystem),
                       trailing: Icon(Icons.arrow_forward_ios),
+                      onTap: () {
+                        Route route = MaterialPageRoute(builder: (context) => DetailPage(snapshot.data[index]));
+                        Navigator.push(context, route);
+                      },
                     ),
 /*
                     elevation: 5.0,
