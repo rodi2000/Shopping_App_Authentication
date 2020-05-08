@@ -35,8 +35,8 @@ class DetailPage extends StatelessWidget {
                 child: Text('Specifications', style: TextStyle(fontSize: 20, color: Colors.white)),
               ),
             ),
-           Container(
-             height: 340,
+            Container(
+              height: 340,
               child: ListView(
                 shrinkWrap: true,
                 children: <Widget>[

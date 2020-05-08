@@ -77,29 +77,7 @@ class _HomeState extends State<Home> {
                         Navigator.push(context, route);
                       },
                     ),
-/*
-                    elevation: 5.0,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        children: <Widget>[
-                          CircleAvatar(
-                            child: Text(snapshot.data[index].name[0]),
-                            backgroundColor: Colors.cyan,
-                            foregroundColor: Colors.white,
-                          ),
-                          Padding(padding: const EdgeInsets.all(8.0)),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(snapshot.data[index].name, style: TextStyle(fontSize: 18.0)),
-                              Text(snapshot.data[index].operatingSystem),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-*/
+
                   );
                 },
               );
@@ -115,7 +93,7 @@ class Mobile {
   final String rom, screenSize, backCamera, companyName, name, frontCamera, battery, operatingSystem, processor, url, ram;
 
   Mobile(this.rom, this.screenSize, this.backCamera, this.companyName,
-          this.name, this.frontCamera, this.battery, this.operatingSystem,
-          this.processor, this.url, this.ram);
+      this.name, this.frontCamera, this.battery, this.operatingSystem,
+      this.processor, this.url, this.ram);
 
 }
